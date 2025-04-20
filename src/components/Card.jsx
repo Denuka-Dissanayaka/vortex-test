@@ -1,6 +1,16 @@
 import React from "react";
 
-function Card({ firstName, lastName, email, img, age, id, deleteHandle }) {
+function Card({
+  firstName,
+  lastName,
+  email,
+  img,
+  age,
+  id,
+  deleteHandle,
+  setOpenModal,
+  setEditId,
+}) {
   return (
     <div className="p-2.5 bg-gray-200 rounded">
       <div className="flex justify-center my-2">
@@ -11,7 +21,16 @@ function Card({ firstName, lastName, email, img, age, id, deleteHandle }) {
       <p className="text-center">Email : {`${email}`}</p>
       <p className="text-center">Age : {`${age}`}</p>
 
-      <div className="flex flex-row-reverse">
+      <div className="flex justify-end mt-2">
+        <button
+          className="bg-green-500 hover:bg-green-700 text-white font-bold py-1 px-4 rounded cursor-pointer mr-2"
+          onClick={() => {
+            setOpenModal(true);
+            setEditId(id);
+          }}
+        >
+          Edit
+        </button>
         <button
           className="bg-red-500 hover:bg-red-700 text-white font-bold py-1 px-4 rounded cursor-pointer"
           onClick={() => {
