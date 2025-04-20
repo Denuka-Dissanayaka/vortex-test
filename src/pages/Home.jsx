@@ -1,7 +1,8 @@
-import React, { use, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import axios from "axios";
 
 import Card from "../components/Card";
+import Search from "../components/Search";
 
 function Home() {
   const [users, setUsers] = useState([]);
@@ -23,7 +24,11 @@ function Home() {
         Vortex Assessment
       </h1>
 
-      <div className="mt-5 grid grid-cols-4 gap-4 p-5">
+      <div className="mt-5 grid grid-cols-4 pl-5 gap-4">
+        <Search data={users} setUsers={setUsers} />
+      </div>
+
+      <div className="mt-2 grid grid-cols-1 md:grid-cols-4 gap-4 p-5">
         {users.map((user, i) => (
           <Card
             key={i}
