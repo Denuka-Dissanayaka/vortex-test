@@ -30,7 +30,7 @@ function Search({ data, setUsers }) {
     const result = data.filter((user) =>
       user.firstName.toLowerCase().includes(lowerSearchTerm)
     );
-    console.log(result);
+
     setUsers(result);
   }
 
